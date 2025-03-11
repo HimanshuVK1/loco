@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: loco-node-app-deployment
+  name: node-app-deployment
 spec:
   replicas: 3
   selector:
@@ -57,7 +57,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: loco-node-app-service
+  name: node-app-service
 spec:
   selector:
     app: node-app
@@ -78,7 +78,7 @@ spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: loco-node-app-deployment
+    name: node-app-deployment
   minReplicas: 3
   maxReplicas: 10
   metrics:
